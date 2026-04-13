@@ -98,6 +98,25 @@ if (carousel) {
 
 const menuLinks = [...document.querySelectorAll('.header-menu a[href^="#"]')];
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
+const mobileMenuToggle = document.querySelector('.header-mobile-toggle');
+
+const closeMobileMenu = () => {
+  body.classList.remove('menu-open');
+  mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+  mobileMenuToggle?.setAttribute('aria-label', 'Abrir menu');
+};
+
+mobileMenuToggle?.addEventListener('click', () => {
+  const isOpen = body.classList.toggle('menu-open');
+  mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+  mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 800) {
+    closeMobileMenu();
+  }
+});
 
 anchorLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
@@ -120,6 +139,8 @@ anchorLinks.forEach((link) => {
     if (menuLinks.some((menuLink) => menuLink.getAttribute('href') === targetId)) {
       setActiveMenuLink(menuTargetId);
     }
+
+    closeMobileMenu();
   });
 });
 
