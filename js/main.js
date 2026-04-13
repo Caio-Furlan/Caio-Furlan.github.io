@@ -25,7 +25,7 @@ if (carousel) {
   let currentIndex = 0;
 
   const updateCarousel = () => {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
 
     dots.forEach((dot, index) => {
       dot.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
