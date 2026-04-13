@@ -15,25 +15,58 @@
 
 <body>
   <header class="header">
-    <p>Caio Furlan</p>
-    <nav>
-      <ul class="header-menu">
-        <li><a href="#experiencia">Minha história</a></li>
-        <li><a href="#formacao">Experiência</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <div class="header-conteudo">
+      <p>Caio Furlan</p>
+      <div class="header-acoes">
+        <nav>
+          <ul class="header-menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#experiencia">Minha história</a></li>
+            <li><a href="#formacao">Experiência</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main class="introducao">
-    <img src="./img/CaioPerfil.png" alt="Lobo Cinza" width="360" height="520">
-    <div>
-      <h1>Violonista<br>Católico &<br>Ministro de Música</h1>
-      <p>Álvares Machado - SP</p>
+  <main class="introducao" id="inicio">
+    <div class="introducao-galeria galeria-conteudo" data-carousel data-reveal>
+      <div class="galeria-viewport">
+        <div class="galeria-track">
+          <figure class="galeria-slide">
+            <img src="./img/CaioPerfil1.jpeg" alt="Caio Furlan sorrindo com violão" loading="eager" fetchpriority="high" decoding="async">
+          </figure>
+          <figure class="galeria-slide">
+            <img src="./img/Caio1.jpeg" alt="Caio durante apresentação de louvor" loading="lazy" decoding="async">
+          </figure>
+          <figure class="galeria-slide">
+            <img src="./img/Caio2.jpeg" alt="Caio tocando violão em evento" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+      <div class="galeria-controles">
+        <button class="galeria-btn" type="button" data-carousel-prev aria-label="Slide anterior">&#10094;</button>
+        <div class="galeria-indicadores" role="tablist" aria-label="Selecionar foto">
+          <button type="button" class="galeria-dot" data-slide="0" aria-label="Ir para foto 1" aria-current="true"></button>
+          <button type="button" class="galeria-dot" data-slide="1" aria-label="Ir para foto 2"></button>
+          <button type="button" class="galeria-dot" data-slide="2" aria-label="Ir para foto 3"></button>
+        </div>
+        <button class="galeria-btn" type="button" data-carousel-next aria-label="Próximo slide">&#10095;</button>
+      </div>
+    </div>
+    <div data-reveal>
+      <h1 id="titulo-digitacao" data-title="Violonista|Católico &|Ministro de Música">Violonista<br>Católico &<br>Ministro de Música</h1>
+      <p id="local-digitacao" data-text="Álvares Machado - SP"></p>
     </div>
   </main>
 
-  <section class="experiencia" id="experiencia" aria-label="Experiência">
+  <section class="experiencia" id="experiencia" aria-label="Experiência" data-reveal>
     <h2 class="subtitulo">Minha História</h2>
     <div>
       <p class="experiencia-texto">Olá, meu nome é <strong>Caio Furlan</strong>. Sou violonista há 15 anos e, por meio da música, encontrei uma forma de expressar minha fé, amor e alegria, seja nas melodias mais simples ou nas composições mais intensas. Há 13 anos, atuo ativamente na <strong>Igreja Católica</strong>, onde construí e fortaleço minha caminhada espiritual e musical. Atualmente, sirvo como ministro regional de louvor por meio do violão, levando música, oração e inspiração a diferentes comunidades. Minha trajetória é marcada pela dedicação, sensibilidade e pelo propósito de usar a arte como instrumento de fé, conexão e transformação.</p>
@@ -86,7 +119,7 @@
     </div>
   </section>
 
-  <section class="formacao" id="formacao" aria-label="Formação">
+  <section class="formacao" id="formacao" aria-label="Formação" data-reveal>
     <div class="formacao-container">
       <h2 class="subtitulo">Experiência</h2>
 
@@ -112,7 +145,7 @@
     </div>
   </section>
 
-  <footer class="footer" id="contato">
+  <footer class="footer" id="contato" data-reveal>
     <div class="footer-container">
       <p class="footer-texto">Estou disponivel para aulas de violão particulares. Fale comigo para agendarmos uma conversa.</p>
       <ul class="footer-contato">
@@ -123,5 +156,6 @@
       <p class="footer-copy">Portfólio - Caio Furlan</p>
     </div>
   </footer>
+  <script src="./js/main.js" defer></script>
 </body>
 </html>

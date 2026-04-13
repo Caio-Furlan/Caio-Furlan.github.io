@@ -1,7 +1,21 @@
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #141414;
+  --cor-chumbo: #2f3136;
+  --cor-neon: #d100ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0px;
-  color: #141414;
+  overflow-x: hidden;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -21,6 +35,38 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+body.dark-mode {
+  --cor-fundo: var(--cor-chumbo);
+  --cor-texto: #f3f3f3;
+}
+
+[id] {
+  scroll-margin-top: 120px;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .subtitulo {

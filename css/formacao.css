@@ -1,6 +1,8 @@
 .formacao {
   background: #141414;
   color: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
 .formacao-container {
@@ -22,6 +24,11 @@
   position: absolute;
   bottom: -50px;
   left: 20px;
+  z-index: 3;
+}
+
+body.dark-mode .formacao-container::after {
+  filter: hue-rotate(258deg) saturate(3);
 }
 
 .formacao .subtitulo {
@@ -80,6 +87,10 @@
   background: linear-gradient(#b6f829, #67dd0a);
   position: absolute;
   left: -24px;
+}
+
+body.dark-mode .faculdade-curso::before {
+  background: linear-gradient(var(--cor-neon), #7800a8);
 }
 
 .faculdade-instituicao {

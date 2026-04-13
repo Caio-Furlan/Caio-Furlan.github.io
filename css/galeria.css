@@ -1,0 +1,130 @@
+.introducao-galeria {
+  max-width: 380px;
+}
+
+.galeria-conteudo {
+  display: grid;
+  gap: 18px;
+}
+
+.galeria-viewport {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.galeria-track {
+  display: flex;
+  transform: translateX(0%);
+  transition: transform 0.45s ease;
+}
+
+.galeria-slide {
+  min-width: 100%;
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  background: #f5f5f5;
+  display: grid;
+  place-items: center;
+}
+
+.galeria-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.galeria-controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.galeria-btn {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  color: #141414;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.galeria-btn:hover,
+.galeria-btn:focus-visible {
+  transform: translateY(-2px);
+  background: #e8e8e8;
+}
+
+.galeria-btn:focus-visible {
+  outline: 2px solid #141414;
+  outline-offset: 2px;
+}
+
+.galeria-indicadores {
+  display: flex;
+  gap: 10px;
+}
+
+.galeria-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #b8b8b8;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.galeria-dot:focus-visible {
+  outline: 2px solid #141414;
+  outline-offset: 2px;
+}
+
+.galeria-dot[aria-current="true"] {
+  background: #67dd0a;
+  transform: scale(1.25);
+}
+
+body.dark-mode .galeria-viewport,
+body.dark-mode .galeria-slide,
+body.dark-mode .galeria-btn {
+  background: #3a3c42;
+}
+
+body.dark-mode .galeria-btn {
+  color: #efefef;
+}
+
+body.dark-mode .galeria-btn:hover,
+body.dark-mode .galeria-btn:focus-visible {
+  background: #4b4d54;
+}
+
+body.dark-mode .galeria-btn:focus-visible,
+body.dark-mode .galeria-dot:focus-visible {
+  outline: 2px solid var(--cor-neon);
+}
+
+body.dark-mode .galeria-dot {
+  background: #9b9b9b;
+}
+
+body.dark-mode .galeria-dot[aria-current="true"] {
+  background: var(--cor-neon);
+}
+
+@media (max-width: 800px) {
+  .introducao-galeria {
+    max-width: initial;
+  }
+
+  .galeria-slide {
+    aspect-ratio: 4 / 5;
+  }
+}
