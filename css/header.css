@@ -344,7 +344,16 @@ body.dark-mode .theme-toggle-thumb {
   }
 
   body.dark-mode .header-home::before {
-    background: linear-gradient(to right, rgba(17, 12, 9, 0.15), var(--accent-orange-dark));
+    body.dark-mode .header-home::before {
+      background: linear-gradient(
+        to right,
+        rgba(17, 12, 9, 0.02) 0%,
+        rgba(17, 12, 9, 0.06) 20%,
+        var(--accent-orange-dark) 50%,
+        rgba(17, 12, 9, 0.06) 80%,
+        rgba(17, 12, 9, 0.02) 100%
+      );
+    }
   }
 }
 
