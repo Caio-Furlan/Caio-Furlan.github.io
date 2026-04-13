@@ -12,7 +12,7 @@
 }
 
 body.dark-mode .experiencia .subtitulo {
-  color: #8f9196;
+  color: var(--dm-accent);
 }
 
 .experiencia-texto {
@@ -24,7 +24,7 @@ body.dark-mode .experiencia .subtitulo {
 }
 
 body.dark-mode .experiencia-texto {
-  color: #c7c7c7;
+  color: var(--dm-muted);
 }
 
 .experiencia-texto strong {
@@ -32,7 +32,7 @@ body.dark-mode .experiencia-texto {
 }
 
 body.dark-mode .experiencia-texto strong {
-  color: #ffffff;
+  color: var(--dm-text);
 }
 
 .empresa {
@@ -47,7 +47,7 @@ body.dark-mode .experiencia-texto strong {
 }
 
 body.dark-mode .empresa {
-  background: #3a3c42;
+  background: var(--dm-surface);
 }
 
 .empresa::before {
@@ -55,14 +55,14 @@ body.dark-mode .empresa {
   display: block;
   width: 4px;
   height: 20px;
-  background: linear-gradient(#b6f829, #67dd0a);
+  background: linear-gradient(var(--accent-orange-light), var(--accent-orange-light-2));
   position: absolute;
   top: 20px;
   left: -4px;
 }
 
 body.dark-mode .empresa::before {
-  background: linear-gradient(var(--cor-neon), #7800a8);
+  background: linear-gradient(var(--accent-orange-dark), var(--accent-orange-dark-2));
 }
 
 .empresa-ano {
@@ -76,13 +76,17 @@ body.dark-mode .empresa::before {
 }
 
 body.dark-mode .empresa-ano {
-  color: #c7c7c7;
+  color: var(--dm-muted);
 }
 
 .empresa-titulo {
   font-size: 1.125rem;
   line-height: 1.1;
   font-weight: bold;
+}
+
+body.dark-mode .empresa-titulo {
+  color: var(--dm-title-soft);
 }
 
 .empresa-texto {
@@ -92,7 +96,7 @@ body.dark-mode .empresa-ano {
 }
 
 body.dark-mode .empresa-texto {
-  color: #dedede;
+  color: var(--dm-text);
 }
 
 .empresa-habilidades {
@@ -111,8 +115,8 @@ body.dark-mode .empresa-texto {
 }
 
 body.dark-mode .empresa-habilidades li {
-  background: #2f3136;
-  color: #efefef;
+  background: var(--dm-bg);
+  color: var(--dm-text);
 }
 
 @media (max-width: 800px) {
@@ -125,7 +129,7 @@ body.dark-mode .empresa-habilidades li {
   }
 
   body.dark-mode .experiencia .subtitulo {
-    color: #ffffff;
+    color: var(--dm-text);
   }
   .experiencia-texto {
     font-size: 1.25rem;

@@ -94,23 +94,23 @@
 }
 
 .galeria-dot[aria-current="true"] {
-  background: #67dd0a;
+  background: var(--accent-orange-light);
   transform: scale(1.25);
 }
 
 body.dark-mode .galeria-viewport,
 body.dark-mode .galeria-slide,
 body.dark-mode .galeria-btn {
-  background: #3a3c42;
+  background: var(--dm-surface);
 }
 
 body.dark-mode .galeria-btn {
-  color: #efefef;
+  color: var(--dm-text);
 }
 
 body.dark-mode .galeria-btn:hover,
 body.dark-mode .galeria-btn:focus-visible {
-  background: #4b4d54;
+  background: var(--dm-accent);
 }
 
 body.dark-mode .galeria-btn:focus-visible,
@@ -119,7 +119,7 @@ body.dark-mode .galeria-dot:focus-visible {
 }
 
 body.dark-mode .galeria-dot {
-  background: #9b9b9b;
+  background: var(--dm-muted);
 }
 
 body.dark-mode .galeria-dot[aria-current="true"] {

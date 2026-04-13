@@ -43,15 +43,19 @@
   display: block;
   width: 130px;
   height: 100px;
-  background: url("../img/detalhe.svg") no-repeat center;
+  background: url("../img/detalhe-light.svg") no-repeat center;
   position: absolute;
   top: -15px;
   left: -40px;
   z-index: -1;
 }
 
+body:not(.dark-mode) .introducao h1::before {
+  background-image: url("../img/detalhe-light.svg");
+}
+
 body.dark-mode .introducao h1::before {
-  filter: hue-rotate(258deg) saturate(3);
+  background-image: url("../img/detalhe-dark.svg");
 }
 
 .introducao p {
@@ -64,7 +68,7 @@ body.dark-mode .introducao h1::before {
 }
 
 body.dark-mode .introducao p {
-  color: #d0d0d0;
+  color: var(--dm-muted);
 }
 
 @media (max-width: 1000px) {

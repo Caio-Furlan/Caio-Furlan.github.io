@@ -1,18 +1,25 @@
 const body = document.body;
-const themeToggle = document.querySelector('.theme-toggle');
+const themeToggles = [...document.querySelectorAll('.theme-toggle')];
 const savedTheme = localStorage.getItem('portfolio-theme');
+
+const updateThemeToggles = (isDark) => {
+  themeToggles.forEach((toggle) => {
+    toggle.setAttribute('aria-pressed', String(isDark));
+    toggle.setAttribute('aria-label', isDark ? 'Ativar modo claro' : 'Ativar modo escuro');
+  });
+};
 
 if (savedTheme === 'dark') {
   body.classList.add('dark-mode');
-  themeToggle?.setAttribute('aria-pressed', 'true');
-  themeToggle?.setAttribute('aria-label', 'Ativar modo claro');
+  updateThemeToggles(true);
 }
 
-themeToggle?.addEventListener('click', () => {
-  const isDark = body.classList.toggle('dark-mode');
-  localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
-  themeToggle.setAttribute('aria-pressed', String(isDark));
-  themeToggle.setAttribute('aria-label', isDark ? 'Ativar modo claro' : 'Ativar modo escuro');
+themeToggles.forEach((themeToggle) => {
+  themeToggle.addEventListener('click', () => {
+    const isDark = body.classList.toggle('dark-mode');
+    localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+    updateThemeToggles(isDark);
+  });
 });
 
 const carousel = document.querySelector('[data-carousel]');

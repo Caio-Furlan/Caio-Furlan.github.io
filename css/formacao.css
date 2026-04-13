@@ -20,15 +20,19 @@
   display: block;
   width: 130px;
   height: 100px;
-  background: url("../img/detalhe.svg") no-repeat center;
+  background: url("../img/detalhe-light.svg") no-repeat center;
   position: absolute;
   bottom: -50px;
   left: 20px;
   z-index: 3;
 }
 
+body:not(.dark-mode) .formacao-container::after {
+  background-image: url("../img/detalhe-light.svg");
+}
+
 body.dark-mode .formacao-container::after {
-  filter: hue-rotate(258deg) saturate(3);
+  background-image: url("../img/detalhe-dark.svg");
 }
 
 .formacao .subtitulo {
@@ -84,13 +88,13 @@ body.dark-mode .formacao-container::after {
   display: block;
   width: 4px;
   height: 20px;
-  background: linear-gradient(#b6f829, #67dd0a);
+  background: linear-gradient(var(--accent-orange-light), var(--accent-orange-light-2));
   position: absolute;
   left: -24px;
 }
 
 body.dark-mode .faculdade-curso::before {
-  background: linear-gradient(var(--cor-neon), #7800a8);
+  background: linear-gradient(var(--accent-orange-dark), var(--accent-orange-dark-2));
 }
 
 .faculdade-instituicao {

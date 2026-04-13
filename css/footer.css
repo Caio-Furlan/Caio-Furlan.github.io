@@ -2,6 +2,10 @@
   background: #000000;
 }
 
+body.dark-mode .footer {
+  background: var(--dm-surface);
+}
+
 .footer-container {
   max-width: 1200px;
   padding: 120px 20px 60px 20px;
@@ -18,6 +22,10 @@
   color: #cccccc;
 }
 
+body.dark-mode .footer-texto {
+  color: var(--dm-muted);
+}
+
 .footer-contato li {
   font-weight: bold;
   font-size: 2.25rem;
@@ -25,6 +33,11 @@
   color: #ffffff;
   margin-bottom: 30px;
   position: relative;
+}
+
+body.dark-mode .footer-contato li,
+body.dark-mode .footer-contato li a {
+  color: var(--dm-text);
 }
 
 .footer-contato li::before {
@@ -49,6 +62,10 @@
   background: url("../img/instagram.svg") no-repeat center;
 }
 
+.footer-contato li::before {
+  filter: brightness(0) saturate(100%) invert(56%) sepia(96%) saturate(1152%) hue-rotate(350deg) brightness(101%) contrast(104%);
+}
+
 .footer-contato .github::before {
   background: url("../img/github.svg") no-repeat center;
 }
@@ -66,6 +83,14 @@
   font-size: 1.125rem;
   color: #8f8f8f;
   text-align: center;
+}
+
+body.dark-mode .footer-copy {
+  color: var(--dm-accent);
+}
+
+body.dark-mode .footer-contato li::before {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(71%) saturate(976%) hue-rotate(346deg) brightness(104%) contrast(102%);
 }
 
 @media (max-width: 800px) {
