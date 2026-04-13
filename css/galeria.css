@@ -129,6 +129,8 @@ body.dark-mode .galeria-dot[aria-current="true"] {
 @media (max-width: 800px) {
   .introducao-galeria {
     max-width: initial;
+    margin: 0 auto;
+    width: min(100%, 360px);
   }
 
   .galeria-slide {

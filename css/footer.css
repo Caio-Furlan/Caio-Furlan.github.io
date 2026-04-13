@@ -69,9 +69,14 @@
 }
 
 @media (max-width: 800px) {
+  .footer {
+    overflow: hidden;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 40px;
+    padding: 90px 20px 50px 20px;
   }
 
   .footer-contato li {

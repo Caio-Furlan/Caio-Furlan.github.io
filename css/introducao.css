@@ -78,9 +78,16 @@ body.dark-mode .introducao p {
 
 @media (max-width: 800px) {
   .introducao {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     padding-top: 120px;
+  }
+  .introducao > div:last-child {
+    order: 1;
+    min-height: 220px;
+  }
+  .introducao-galeria {
+    order: 2;
   }
   .introducao p {
     font-size: 1.1rem;
@@ -92,6 +99,10 @@ body.dark-mode .introducao p {
     width: 30px;
     height: 10px;
     left: 0px;
+  }
+  #titulo-digitacao,
+  #local-digitacao {
+    text-align: center;
   }
 }
 

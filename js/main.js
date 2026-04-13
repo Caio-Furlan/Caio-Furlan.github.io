@@ -99,7 +99,6 @@ if (carousel) {
 const menuLinks = [...document.querySelectorAll('.header-menu a[href^="#"]')];
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
 const mobileMenuToggle = document.querySelector('.header-mobile-toggle');
-
 const closeMobileMenu = () => {
   body.classList.remove('menu-open');
   mobileMenuToggle?.setAttribute('aria-expanded', 'false');
@@ -110,6 +109,23 @@ mobileMenuToggle?.addEventListener('click', () => {
   const isOpen = body.classList.toggle('menu-open');
   mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
   mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+});
+
+document.addEventListener('click', (event) => {
+  if (!body.classList.contains('menu-open')) {
+    return;
+  }
+
+  const target = event.target;
+  if (!(target instanceof Element)) {
+    return;
+  }
+
+  if (target.closest('.header-acoes') || target.closest('.header-mobile-toggle')) {
+    return;
+  }
+
+  closeMobileMenu();
 });
 
 window.addEventListener('resize', () => {

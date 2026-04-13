@@ -81,6 +81,20 @@ body.dark-mode .header {
   height: 2px;
   background: #141414;
   border-radius: 2px;
+  transition: transform 0.28s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+
+body.menu-open .header-mobile-toggle span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+body.menu-open .header-mobile-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+body.menu-open .header-mobile-toggle span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 body.dark-mode .header-mobile-toggle {
@@ -97,6 +111,7 @@ body.dark-mode .header-mobile-toggle span {
   position: relative;
   color: #141414;
   text-decoration: none;
+  background: transparent;
 }
 
 .header-home::before {
@@ -206,14 +221,16 @@ body.dark-mode .theme-toggle-thumb {
   }
 
   .header-conteudo {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 12px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    min-height: 48px;
   }
 
   .header-home {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .header-home::before {
@@ -222,19 +239,34 @@ body.dark-mode .theme-toggle-thumb {
   }
 
   .header-acoes {
-    gap: 10px;
-    justify-self: end;
+    gap: 8px;
+    align-items: center;
     position: relative;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header-home,
+  .header-acoes {
+    opacity: 1;
+    animation: none;
   }
 
   .header-mobile-toggle {
     display: inline-flex;
+    order: 2;
+  }
+
+  .theme-toggle {
+    order: 1;
   }
 
   .header-nav {
     display: none;
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 12px);
     right: 0;
     padding: 10px;
     background: #f5f5f5;
@@ -258,8 +290,12 @@ body.dark-mode .theme-toggle-thumb {
   }
 
   body.dark-mode .header-nav,
-  body.dark-mode .header a {
+  body.dark-mode .header-nav a {
     background: #3a3c42;
+  }
+
+  body.dark-mode .header-home::before {
+    background: linear-gradient(to left, var(--cor-neon), #2f3136);
   }
 }
 
